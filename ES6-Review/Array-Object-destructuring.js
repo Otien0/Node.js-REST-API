@@ -1,8 +1,8 @@
 const user = {
-  name: 'David',
-  age: 22,
-  city: 'Salt Lake City',
-  country: 'USA'
+  name: 'Morris',
+  age: 25,
+  city: 'Nairobi City',
+  country: 'Kenya'
 };
 
 /* const name = user.name;
