@@ -44,4 +44,5 @@ NODE.JS REST APIs:
 NODE-API:
     mkdir node-api
     cd into folder, npm init
-    
+    Packages to install:
+                npm install express dotenv --save
