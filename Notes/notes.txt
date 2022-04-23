@@ -31,4 +31,11 @@ NODE.JS REST APIs:
             https://www.javascripttutorial.net/es6/javascript-spread/
             https://www.geeksforgeeks.org/javascript-spread-operator/
 
-    
+    c) Promises && Async-Await:
+            https://javascript.info/async
+            https://javascript.info/promise-api
+            https://javascript.info/async-await
+            https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Promises
+            https://medium.com/@prabhur24/es6-for-beginners-promises-async-await-operations-dc07494362b9
+            https://betterprogramming.pub/should-i-use-promises-or-async-await-126ab5c98789
+            https://www.freecodecamp.org/news/javascript-async-await-tutorial-learn-callbacks-promises-async-await-by-making-icecream/
