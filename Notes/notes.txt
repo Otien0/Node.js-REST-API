@@ -55,4 +55,9 @@ NODE-API:
         https://www.npmjs.com/package/cors
             npm install cors --save
 
+    a) Creating the POST ROUTE:
+        Create the Model_Schema of your collection,
+        Create the Controller and Service by importing the neccessary routes.
+        Test the POST method with POSTMAN.
+
     
