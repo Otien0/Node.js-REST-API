@@ -18,3 +18,12 @@ NODE.JS REST APIs:
         https://www.edureka.co/blog/rest-api-with-node-js/
         https://hevodata.com/learn/building-a-secure-node-js-rest-api/
         https://www.makeuseof.com/beginners-guide-to-restful-apis-in-nodejs/
+
+    ES6 Concepts Review:
+    a) Object && Arrays Destructuring:
+            https://linuxhint.com/destructure-object-arrays-in-javascript-examples/
+            https://www.freecodecamp.org/news/array-and-object-destructuring-in-javascript/
+            https://medium.com/geekculture/javascript-es6-array-and-object-destructuring-end-to-end-b3f23cb9968f
+            https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+
+    
