@@ -41,6 +41,9 @@ app.use(express.urlencoded({ extended: true }));
 //     replaceWith: '_'
 // }))
 
+
+app.use('/api/v1/product', require('./routes/products'));
+
 app.get('/', (req, res, next) => {
     res.send('Welcome to node-REST-API version 1.0')
 })
