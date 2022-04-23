@@ -86,6 +86,11 @@ NODE-API:
             https://joi.dev/api/?v=17.6.0
 		https://softchris.github.io/pages/joi.html#introducing-joi
 		https://www.digitalocean.com/community/tutorials/how-to-use-joi-for-node-api-schema-validation
+
+	b) Implementing the GET ROUTE:
+		Create the Controller and Service by importing the neccessary routes.
+		Create a dbHelper script to display the result into an object(s).
+        	Test the GET method with POSTMAN.
             
 
     
