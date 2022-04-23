@@ -45,4 +45,5 @@ NODE-API:
     mkdir node-api
     cd into folder, npm init
     Packages to install:
-                npm install express dotenv --save
+            npm install express mongoose  dotenv --save
+            npm install -D nodemon --save   // for restarting the server upon changes.
