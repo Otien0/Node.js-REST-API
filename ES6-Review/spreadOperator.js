@@ -16,19 +16,19 @@ console.log('arr3', arr3);
 
 
 const userOne = {
-  name: 'David',
-  age: 22,
-  city: 'Salt Lake City',
-  country: 'USA'
+  firstName: 'Morris',
+  age: 25,
+  city: 'Nairobi City',
+  country: 'Kenya'
 };
 
 /* const userTwo = {};
 Object.assign(userTwo, userOne);
-userTwo.name = 'John'; */
+userTwo.firstName = 'Net-Ninja'; */
 
-const userTwo = {...userOne, name: 'John', gender: 'male'};
+const userTwo = {...userOne, firstName: 'Net', lastName: 'Ninja', gender: 'male'};
 
-console.log('userone', userOne);
+console.log('userOne', userOne);
 console.log('userTwo', userTwo);
 
 
