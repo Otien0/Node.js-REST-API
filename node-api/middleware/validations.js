@@ -1,26 +1,33 @@
-const Joi = require('joi'),
-    //   middlewareObj = {},
-    { productSchema} = require('../apiSchema/JoiSchemas');
+const { ProductSchema} = require('../apiSchema/JoiSchemas'),
+      ExpressError     = require('../utils/ExpressError'),
+      constants        = require('../constants/index');
+      
       
 
-
-const validateObjectSchema = (data, schema) => {
-    const result = Joi.validate(data, schema);
-    console.log('Joi Schema Validation Result ===', result);
+const validateObjectSchema = (data) => {
+    const result = ProductSchema.validate(data, {convert: false});
+    if (result.error){
+        const errorDetails = result.error.details.map(value => {
+            return {
+                error: value.message,
+                path: value.path
+            }
+        })
+        return errorDetails;
+    }
+    return null;
 }
 
 module.exports.validateProduct = (schema) => {
-    // const { error } = productSchema.validate(req.body);
-    // if (error) {
-    //     const msg = error.details.map(el => el.message).join(',')
-    //     throw new Error(error, msg)
-    // } else {
-    //     return(req, res, next) => {
-    //         validateObjectSchema(req.body, schema)
-    //     }
-    // }
     return(req, res, next) => {
-        validateObjectSchema(req.body, schema)
+        let response = {...constants.defaultServerResponse}
+        const error = validateObjectSchema(req.body, schema)
+        if(error){
+            response.body = error
+            response.message = constants.requestValidationMessage.BAD_REQUEST
+            return res.status(response.statusCode).send(response);
+        }
+        return next();
     }
     
 }
