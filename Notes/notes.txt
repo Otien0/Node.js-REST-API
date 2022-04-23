@@ -60,4 +60,31 @@ NODE-API:
         Create the Controller and Service by importing the neccessary routes.
         Test the POST method with POSTMAN.
 
+        => "toObject" Mongoose Model_Schema:
+            Documents have a toObject method which converts the mongoose document into a plain JavaScript object.
+                https://mongoosejs.com/docs/api.html#document_Document-toObject
+                https://mongoosejs.com/docs/api.html#schematypeoptions_SchemaTypeOptions-transform
+                https://stackoverflow.com/questions/7503450/how-do-you-turn-a-mongoose-document-into-a-plain-object
+                https://alexanderzeitler.com/articles/mongoose-tojson-toobject-transform-with-subdocuments/
+
+	Errors and Validating Data::
+	1) Client-Side Validation:
+					https://getbootstrap.com/docs/5.1/forms/validation/
+
+	2) Server-Side Validation:
+		Using JOI for Schema and data Validation for Javascript
+			https://joi.dev/api/?v=17.6.0
+
+
+        => "@hapi/joi" npm
+            Hapi Joi is an object schema description language and validator for JavaScript objects.
+            With Hapi Joi, we create blueprints or schemas for JavaScript objects (an object that stores information) to ensure validation of key information.
+            However, this package has been deprecated, so we'll;
+                Switch to 'npm install joi --save'
+            https://www.npmjs.com/package/joi
+            https://joi.dev/api/?v=17.6.0
+		https://softchris.github.io/pages/joi.html#introducing-joi
+		https://www.digitalocean.com/community/tutorials/how-to-use-joi-for-node-api-schema-validation
+            
+
     
