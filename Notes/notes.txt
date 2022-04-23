@@ -10,3 +10,11 @@ NODE.JS REST APIs:
 		PUT -(create or replace a resource).
 		PATCH -(update/modify a resource).
 		DELETE -(remove a resource).
+
+    Download Node.js, npm && Postman.
+
+    LINKS FOR FURTHER READING:
+        https://www.toptal.com/nodejs/secure-rest-api-in-nodejs
+        https://www.edureka.co/blog/rest-api-with-node-js/
+        https://hevodata.com/learn/building-a-secure-node-js-rest-api/
+        https://www.makeuseof.com/beginners-guide-to-restful-apis-in-nodejs/
