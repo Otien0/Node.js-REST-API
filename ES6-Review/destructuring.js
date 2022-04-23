@@ -1,18 +1,26 @@
+// 1. Objects
+
 const user = {
-  name: 'Morris',
+  firstName: 'Morris',
+  lastName: 'Oduor',
   age: 25,
   city: 'Nairobi City',
   country: 'Kenya'
 };
 
-/* const name = user.name;
+/* const firstName = user.firstName;
 const country = user.country; */
 
-const { name, country } = user;
+const { firstName, lastName, age, city, country } = user;
 
-console.log('name: ', name);
+console.log('firstName: ', firstName);
+console.log('lastName: ', lastName);
+console.log('age: ', age);
+console.log('city: ', city);
 console.log('country: ', country);
 
+
+// 2. Arrays
 const myArr = [1, 2, 3, 4];
 
 /* const foo = myArr[0];
