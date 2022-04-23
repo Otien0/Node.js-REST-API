@@ -47,6 +47,7 @@ NODE-API:
     Packages to install:
             npm install express mongoose  dotenv --save
             npm install -D nodemon --save   // for restarting the server upon changes.
+		npm install ejs-mate --save
 
     Using middleware:
         https://expressjs.com/en/guide/using-middleware.html
