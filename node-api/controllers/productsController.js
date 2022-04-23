@@ -1,5 +1,4 @@
-const Product        = require('../models/productModel'),
-      productService = require('../service/productsService'),
+const productService = require('../service/productsService'),
       constants      = require('../constants');
 
 
