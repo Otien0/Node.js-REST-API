@@ -1,0 +1,5 @@
+NODE.JS REST APIs:
+
+    REST APIs are used to access and manipulate data using a common set of stateless operations.
+    These operations are integral to the HTTP protocol and represent essential create, read, update,
+     and delete (CRUD) functionality, although not in a clean one-to-one manner:
