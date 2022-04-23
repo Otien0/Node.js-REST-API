@@ -39,3 +39,9 @@ NODE.JS REST APIs:
             https://medium.com/@prabhur24/es6-for-beginners-promises-async-await-operations-dc07494362b9
             https://betterprogramming.pub/should-i-use-promises-or-async-await-126ab5c98789
             https://www.freecodecamp.org/news/javascript-async-await-tutorial-learn-callbacks-promises-async-await-by-making-icecream/
+
+
+NODE-API:
+    mkdir node-api
+    cd into folder, npm init
+    
