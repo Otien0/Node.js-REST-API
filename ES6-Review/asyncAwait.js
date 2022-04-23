@@ -1,3 +1,4 @@
+// 1. Promise without an async
 const displayMessage = (message) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -9,7 +10,7 @@ const displayMessage = (message) => {
   });
 }
 
-// promise
+// promise within a "callback hell"
 
 /* displayMessage('Hello').then(result => {
   console.log('result', result);
@@ -33,6 +34,7 @@ const greetings = async () => {
 
 /* greetings().then(result => console.log('***', result)); */
 
+// 2. Promise Using Async-Await => with try/catch block
 const myFunc = async () => {
   try {
     let result = '';
