@@ -9,5 +9,6 @@ const express               = require("express"),
 
 router.post('/', validateProduct(product.ProductSchema), products.createProduct);
 
+router.get('/', products.getProducts)
 
 module.exports = router;
