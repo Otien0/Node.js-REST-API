@@ -18,8 +18,10 @@ NODE.JS REST APIs:
         https://www.edureka.co/blog/rest-api-with-node-js/
         https://hevodata.com/learn/building-a-secure-node-js-rest-api/
         https://www.makeuseof.com/beginners-guide-to-restful-apis-in-nodejs/
+	  https://r.bluethl.net/how-to-design-better-apis
 
     ES6 Concepts Review:
+		https://www.syncfusion.com/blogs/post/top-6-javascript-es12-features-you-should-use.aspx
     a) Objects && Arrays Destructuring:
             https://linuxhint.com/destructure-object-arrays-in-javascript-examples/
             https://www.freecodecamp.org/news/array-and-object-destructuring-in-javascript/
@@ -46,6 +48,7 @@ NODE.JS REST APIs:
 		Here I'm creating two REST APIs;
 				1) PRODUCTS API
 				2) USER-SIGNUP API
+				3) API-DOCUMENTATION(SWAGGER)
 =============================================>>>>
 
 
@@ -163,8 +166,13 @@ NODE-API:
 		Configure the products token validation and add it on all the Product-ROTES, this enhances security.
 
 
-
-
+3) Documenting REST-API with Swagger:
+		https://dev.to/przpiw/document-express-api-with-swagger-51in
+		https://blog.tericcabrel.com/document-a-node-js-rest-api-with-swagger-and-open-api/
+		https://www.javacodegeeks.com/api-documentation-in-node-js-using-swagger.html
+		https://javascript.plainenglish.io/how-to-implement-and-use-swagger-in-nodejs-d0b95e765245
+	
+	
 
 
 
