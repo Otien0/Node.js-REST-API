@@ -125,7 +125,22 @@ NODE-API:
 
 2) USER-SIGNUP REST API:
 	
-	a) Creating the POST ROUTE:
+	a) Creating the User-SIGNUP POST-ROUTE:
+         	Create the Model_Schema of your Users_collection,
+         	Create the Controller and Service by importing the neccessary routes.
+		Using JOI for Schema and data Validation for Javascript.
+		
+		Using ==>> node.bcrypt.js (A library to help you hash passwords.):
+			https://www.npmjs.com/package/bcrypt
+				npm install bcrypt --save
+
+         	Test the POST(user-signup) method with POSTMAN.
+
+	b) Creating the User-LOGIN POST-ROUTE Using JWT(Json Web Token):
+			https://www.section.io/engineering-education/how-to-build-authentication-api-with-jwt-token-in-nodejs/
+			https://medium.com/swlh/nodejs-with-jwt-authentication-feb961763541
+			https://www.freecodecamp.org/news/securing-node-js-restful-apis-with-json-web-tokens-9f811a92bb52/
+
          	Create the Model_Schema of your Users_collection,
          	Create the Controller and Service by importing the neccessary routes.
 		Using JOI for Schema and data Validation for Javascript.
