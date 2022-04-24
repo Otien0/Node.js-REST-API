@@ -90,10 +90,24 @@ NODE-API:
 	b) Implementing the GET ROUTE:
 		Create the Controller and Service by importing the neccessary routes.
 		Create a dbHelper script to display the result into an object(s).
-        	Test the GET method with POSTMAN.
+        	Test the GET(all) method with POSTMAN.
             
-		Adding Pagination on the GET ROUTE:
+		Adding Pagination on the GET(all) ROUTE:
 		Create the Pagination JOI-Schema and implement it to the validations middleware.
 		Modify the GET service method to fit your pagination JOI-Schema.
+
+
+		GET Product by Id:
+		Works same as GET(all), we only need to parse the "id".
+
+	
+	c) Implementing the PUT ROUTE:
+		Create the Controller and Service by importing the neccessary routes.
+		Create the JOI Schema model.
+        	Test the PUT(/:Id) method with POSTMAN.
+
+	d) Implementing the DELETE ROUTE:
+		Create the Controller and Service by importing the neccessary routes.
+        	Test the DELETE(/:Id) method with POSTMAN.
 
     
