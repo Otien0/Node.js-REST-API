@@ -40,11 +40,14 @@ NODE.JS REST APIs:
             https://betterprogramming.pub/should-i-use-promises-or-async-await-126ab5c98789
             https://www.freecodecamp.org/news/javascript-async-await-tutorial-learn-callbacks-promises-async-await-by-making-icecream/
 
+
+
 =============================================>>>> 
 		Here I'm creating two REST APIs;
 				1) PRODUCTS API
 				2) USER-SIGNUP API
 =============================================>>>>
+
 
 1) PRODUCTS API::
 
@@ -122,9 +125,16 @@ NODE-API:
 
 2) USER-SIGNUP REST API:
 	
+	a) Creating the POST ROUTE:
+         	Create the Model_Schema of your Users_collection,
+         	Create the Controller and Service by importing the neccessary routes.
+		Using JOI for Schema and data Validation for Javascript.
+		
+		Using ==>> node.bcrypt.js (A library to help you hash passwords.):
+			https://www.npmjs.com/package/bcrypt
+				npm install bcrypt --save
 
-
-
+         	Test the POST(user-signup) method with POSTMAN.
 
 
 
