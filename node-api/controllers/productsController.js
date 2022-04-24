@@ -21,7 +21,7 @@ module.exports.createProduct = async(req, res) => {
 
 //GET ROUTE-- GET all Products from the Database
 module.exports.getProducts = async (req, res,) => {
-    let response = {...constants.defaultServerResponse}
+    let response = {...constants.defaultServerResponse }
 
     try {
         // console.log('===', req.body)
@@ -34,19 +34,4 @@ module.exports.getProducts = async (req, res,) => {
         response.message = error.message;
     }
     return res.status(response.statusCode).send(response);
-}
-
-//EDIT ROUTE
-module.exports.renderEditForm = async (req, res) => {
-
-}
-
-// UPDATE ROUTE
-module.exports.updateProduct = async (req, res) => {
-  
-}
-
-// DESTROY ROUTE
-module.exports.deleteProduct = async (req, res) => {
-
 }
