@@ -145,11 +145,26 @@ NODE-API:
          	Create the Controller and Service by importing the neccessary routes.
 		Using JOI for Schema and data Validation for Javascript.
 		
-		Using ==>> node.bcrypt.js (A library to help you hash passwords.):
+		Using ==>> node.bcrypt.js (A library to help you hash passwords):
 			https://www.npmjs.com/package/bcrypt
 				npm install bcrypt --save
 
-         	Test the POST(user-signup) method with POSTMAN.
+		Using ==>> jsonwebtoken:
+			https://www.npmjs.com/package/jsonwebtoken
+				npm install jsonwebtoken --save
+
+         	Test the POST(user-login) method with POSTMAN.
+		Test your decoded password token through:
+							https://jwt.io/
+
+
+	c) Securing the Products API Using JWT:
+		With this, only logged in users can access the products API End-Points.
+
+
+
+
+
 
 
 
