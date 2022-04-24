@@ -10,7 +10,6 @@ const dbUrl                 = process.env.MONGO_URL || 'mongodb://localhost:2701
 
 dotEnv.config();
 
-// "mongodb://localhost/node-REST-API"
 mongoose.connect(dbUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true
