@@ -23,3 +23,8 @@ module.exports.updateProductSchema = Joi.object().keys({
     price: Joi.number(),
     brand: Joi.string()
 })
+
+module.exports.signup = Joi.object().keys({
+    email: Joi.string().required(),
+    password: Joi.string().required()
+})
