@@ -21,7 +21,8 @@ module.exports = {
 
     },
     requestValidationMessage: {
-        BAD_REQUEST: 'Invalid Fields'
+        BAD_REQUEST: 'Invalid Fields',
+        TOKEN_MISSING: 'Token Missing From header'
     },
     databaseMessage: {
         INVALID_ID: 'Invalid Id'
