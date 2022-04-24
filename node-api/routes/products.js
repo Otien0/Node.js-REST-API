@@ -2,18 +2,18 @@ const express               = require("express"),
       router                = express.Router(),
     //   Product               = require("../models/productModel"),
       products              = require('../controllers/productsController'),
-      { validateProduct, validatePaginationSchema, validateProductPut }   = require('../middleware/validations'),
+      { validateProduct, validatePaginationSchema, validateProductPut, validateToken }   = require('../middleware/validations'),
       Schema               = require('../apiSchema/JoiSchemas');
 
 
 
-router.post('/', validateProduct(Schema.ProductSchema), products.createProduct);
+router.post('/', validateToken, validateProduct(Schema.ProductSchema), products.createProduct);
 
-router.get('/:id',  products.getProductById);
-router.put('/:id', validateProductPut(Schema.updateProductSchema), products.updateProduct);
+router.get('/:id', validateToken, products.getProductById);
+router.put('/:id', validateToken, validateProductPut(Schema.updateProductSchema), products.updateProduct);
 
-router.get('/', validatePaginationSchema(Schema.getProductsPage), products.getProducts);
+router.get('/', validateToken, validatePaginationSchema(Schema.getProductsPage), products.getProducts);
 
-router.delete('/:id', products.deleteProduct);
+router.delete('/:id', validateToken, products.deleteProduct);
 
 module.exports = router;
