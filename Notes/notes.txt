@@ -40,6 +40,13 @@ NODE.JS REST APIs:
             https://betterprogramming.pub/should-i-use-promises-or-async-await-126ab5c98789
             https://www.freecodecamp.org/news/javascript-async-await-tutorial-learn-callbacks-promises-async-await-by-making-icecream/
 
+=============================================>>>> 
+		Here I'm creating two REST APIs;
+				1) PRODUCTS API
+				2) USER-SIGNUP API
+=============================================>>>>
+
+1) PRODUCTS API::
 
 NODE-API:
     mkdir node-api
@@ -110,4 +117,37 @@ NODE-API:
 		Create the Controller and Service by importing the neccessary routes.
         	Test the DELETE(/:Id) method with POSTMAN.
 
+
+
+
+2) USER-SIGNUP REST API:
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MORE READS::
+
+https://mannhowie.com/clean-architecture-node
+https://itnext.io/clean-architecture-making-node-js-api-shine-38134b8f9b5c
+https://medium.com/dhiwise/features-of-clean-code-architecture-node-js-9a7ecac84d5c#
     
