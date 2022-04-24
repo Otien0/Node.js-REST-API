@@ -172,10 +172,15 @@ NODE-API:
 		https://www.javacodegeeks.com/api-documentation-in-node-js-using-swagger.html
 		https://javascript.plainenglish.io/how-to-implement-and-use-swagger-in-nodejs-d0b95e765245
 	
+	https://app.swaggerhub.com/home
+	Go to => https://editor.swagger.io/  // to start documenting your API.
+
+	OR
+	Install the Swagger UI Express on your project:
+		https://www.npmjs.com/package/swagger-ui-express
+			npm install swagger-ui-express
+			npm install swagger-ui-express yamljs
 	
-
-
-
 
 
 

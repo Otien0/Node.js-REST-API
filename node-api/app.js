@@ -4,7 +4,10 @@ const express               = require("express"),
       mongoose              = require("mongoose"),
       dotEnv                = require('dotenv'),
       ejsMate               = require('ejs-mate'),
-      cors                  = require('cors');
+      cors                  = require('cors'),
+      swaggerUi             = require('swagger-ui-express'),
+      YAML                  = require('yamljs'),
+      swaggerDocument       = YAML.load('./swagger.yaml');
 
 const dbUrl                 = process.env.MONGO_URL || 'mongodb://localhost:27017/node-REST-API';
 
@@ -33,6 +36,9 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/api/v1/product', require('./routes/products'));
 app.use('/api/v1/user', require('./routes/users'));
+
+// API DOCUMENTATION
+app.use('/api-docs', swaggerUi.serve, swaggerUi.load(swaggerDocument));
 
 app.get('/', (req, res, next) => {
     res.send('Welcome to node-REST-API version 1.0')
