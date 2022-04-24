@@ -1,5 +1,4 @@
-const { ProductSchema} = require('../apiSchema/JoiSchemas'),
-      ExpressError     = require('../utils/ExpressError'),
+const { ProductSchema, getProductsPage} = require('../apiSchema/JoiSchemas'),
       constants        = require('../constants/index');
       
       
@@ -18,10 +17,10 @@ const validateObjectSchema = (data) => {
     return null;
 }
 
-module.exports.validateProduct = (schema) => {
+module.exports.validateProduct = () => {
     return(req, res, next) => {
         let response = {...constants.defaultServerResponse}
-        const error = validateObjectSchema(req.body, schema)
+        const error = validateObjectSchema(req.body)
         if(error){
             response.body = error
             response.message = constants.requestValidationMessage.BAD_REQUEST
@@ -32,12 +31,26 @@ module.exports.validateProduct = (schema) => {
     
 }
 
-module.exports.validateQueryParams = (schema) => {
+const validatePaginationSchema = (data) => {
+    const result = getProductsPage.validate(data);
+    if (result.error){
+        const errorDetails = result.error.details.map(value => {
+            return {
+                error: value.message,
+                path: value.path
+            }
+        })
+        return errorDetails;
+    }
+    return null;
+}
+module.exports.validatePaginationSchema = (schema) => {
     return(req, res, next) => {
         let response = {...constants.defaultServerResponse}
-        const error = validateObjectSchema(req.query, schema)
+        const error = validatePaginationSchema(req.query, schema)
         if(error){
             response.body = error
+            console.log(error)
             response.message = constants.requestValidationMessage.BAD_REQUEST
             return res.status(response.statusCode).send(response);
         }
