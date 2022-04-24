@@ -1,8 +1,9 @@
 const { ProductSchema, getProductsPage , updateProductSchema, signup, loginSchema} = require('../apiSchema/JoiSchemas'),
-      constants        = require('../constants/index');
+      constants        = require('../constants/index'),
+      jwt              = require('jsonwebtoken');
       
       
-
+// Product VALIDATIONS::
 const validateObjectSchema = (data) => {
     const result = ProductSchema.validate(data, {convert: false});
     if (result.error){
@@ -143,4 +144,23 @@ module.exports.validateUserLogin = () => {
         return next();
     }
     
+}
+
+//Token Validations
+module.exports.validateToken = (req, res, next) => {
+    let response = {...constants.defaultServerResponse}
+    try {
+        if(!req.headers.authorization) {
+            throw new Error(constants.requestValidationMessage.TOKEN_MISSING)
+        }
+        const token = req.headers.authorization.split('Bearer')[1].trim()
+        const decoded = jwt.verify(token, process.env.SECRET_KEY || 'my-secret-key')
+        console.log('decoded', decoded)
+        return next();
+    } catch (error) {
+        console.log('Error', error)
+        response.message = error.message;
+        response.statusCode = 401;
+    }
+    return res.status(response.statusCode).send(response)
 }
