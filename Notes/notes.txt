@@ -180,6 +180,7 @@ NODE-API:
 		https://www.npmjs.com/package/swagger-ui-express
 			npm install swagger-ui-express
 			npm install swagger-ui-express yamljs
+		Then add the documentation on swagger.json/yaml file.
 	
 
 
