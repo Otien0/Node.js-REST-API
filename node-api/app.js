@@ -38,7 +38,9 @@ app.use('/api/v1/product', require('./routes/products'));
 app.use('/api/v1/user', require('./routes/users'));
 
 // API DOCUMENTATION
-app.use('/api-docs', swaggerUi.serve, swaggerUi.load(swaggerDocument));
+if (process.env.NODE_ENV != 'production') {
+    app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+}
 
 app.get('/', (req, res, next) => {
     res.send('Welcome to node-REST-API version 1.0')
