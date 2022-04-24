@@ -2,7 +2,7 @@ const userService    = require('../service/userService'),
       constants      = require('../constants');
 
 
-//CREATE ROUTE-- Add new Product to DB
+//USER-SIGNUP POST-ROUTE-- Add new user to DB
 module.exports.signup = async(req, res) => {
     let response = {...constants.defaultServerResponse}
 
@@ -18,67 +18,18 @@ module.exports.signup = async(req, res) => {
     return res.status(response.statusCode).send(response);
 }
 
-//GET ROUTE-- GET all Products from the Database
-// module.exports.getProducts = async (req, res,) => {
-//     let response = {...constants.defaultServerResponse }
+//USER-LOGIN POST-ROUTE-- Login user to DB
+module.exports.login = async(req, res) => {
+    let response = {...constants.defaultServerResponse}
 
-//     try {
-//         const serviceResponse = await productService.getProducts(req.query);
-//         response.statusCode = 200;
-//         response.message = constants.productMessage.PRODUCT_FETCHED;
-//         response.body = serviceResponse;
-//     } catch (error) {
-//         console.log('Something went wrong: Controller: getProducts', error);
-//         response.message = error.message;
-//     }
-//     return res.status(response.statusCode).send(response);
-// }
-
-//GET ROUTE-- GET a single Product By Id from the Database
-// module.exports.getProductById = async (req, res,) => {
-//     let response = {...constants.defaultServerResponse }
-
-//     try {
-//         const serviceResponse = await productService.getProductById(req.params);
-//         response.statusCode = 200;
-//         response.message = constants.productMessage.PRODUCT_FETCHED;
-//         response.body = serviceResponse;
-//     } catch (error) {
-//         console.log('Something went wrong: Controller: getProductById', error);
-//         response.message = error.message;
-//     }
-//     return res.status(response.statusCode).send(response);
-// }
-
-// module.exports.updateProduct = async (req, res,) => {
-//     let response = {...constants.defaultServerResponse }
-
-//     try {
-//         const serviceResponse = await productService.updateProduct({
-//             id: req.params.id,
-//             updateInfo: req.body
-//         });
-//         response.statusCode = 200;
-//         response.message = constants.productMessage.PRODUCT_UPDATED;
-//         response.body = serviceResponse;
-//     } catch (error) {
-//         console.log('Something went wrong: Controller: getProductById', error);
-//         response.message = error.message;
-//     }
-//     return res.status(response.statusCode).send(response);
-// }
-
-// module.exports.deleteProduct = async (req, res,) => {
-//     let response = {...constants.defaultServerResponse }
-
-//     try {
-//         const serviceResponse = await productService.deleteProduct(req.params);
-//         response.statusCode = 200;
-//         response.message = constants.productMessage.PRODUCT_DELETED;
-//         response.body = serviceResponse;
-//     } catch (error) {
-//         console.log('Something went wrong: Controller: deleteProduct', error);
-//         response.message = error.message;
-//     }
-//     return res.status(response.statusCode).send(response);
-// }
+    try {
+        const serviceResponse = await userService.login(req.body);
+        response.statusCode = 200;
+        response.message = constants.userMessage.LOGIN_SUCCESS;
+        response.body = serviceResponse;
+    } catch (error) {
+        console.log('Something went wrong: Controller: login', error);
+        response.message = error.message;
+    }
+    return res.status(response.statusCode).send(response);
+}
