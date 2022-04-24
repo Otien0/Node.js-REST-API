@@ -1,7 +1,8 @@
 const User              = require('../models/userModel'),
-      {formatMongoData, checkObjectId} = require('../helper/dbHelper'),
+      {formatMongoData} = require('../helper/dbHelper'),
       constants         = require('../constants'),
-      bcrypt            = require('bcrypt');
+      bcrypt            = require('bcrypt'),
+      jwt               = require('jsonwebtoken');
 
 module.exports.signup = async({email, password}) => {
     try {
@@ -23,62 +24,29 @@ module.exports.signup = async({email, password}) => {
    
 }
 
-// module.exports.getProducts = async({ skip = 0, limit = 10 }) => {
-//     try {
-//         let products = await Product.find({}).skip(parseInt(skip)).limit(parseInt(limit));
-//         return formatMongoData(products);
-//     } catch (error) {
-//         console.log('Something went wrong: Service: getProducts', error)
-//         throw new Error(error)
-//     }
-   
-// }
+module.exports.login = async({email, password}) => {
+    try {
+        const user = await User.findOne({ email });
+        if (!user) {
+            throw new Error(constants.userMessage.USER_NOT_FOUND)
+        }
+        //Check & Compare Existing Password
+        const isValid = await bcrypt.compare(password, user.password);
+        if (!isValid) {
+            throw new Error(constants.userMessage.INVALID_PASSWORD)
+        }
+        //Using JWT 
+        const token = jwt.sign(
+            { id: user._id },
+            process.env.SECRET_KEY || 'my-secret-key',
+            { expiresIn: '1d'}
+        );
 
-// module.exports.getProductById = async({ id }) => {
-//     try {
-//         checkObjectId(id);
-//         let product = await Product.findById(id);
-//         if (!product){
-//             throw new Error(constants.productMessage.PRODUCT_NOT_FOUND)
-//         }
-//         return formatMongoData(product);
-//     } catch (error) {
-//         console.log('Something went wrong: Service: getProductById', error)
-//         throw new Error(error)
-//     }
+        return { token };
+        
+    } catch (error) {
+        console.log('Something went wrong: Service: login', error)
+        throw new Error(error)
+    }
    
-// }
-
-// module.exports.updateProduct = async({ id, updateInfo }) => {
-//     try {
-//         checkObjectId(id);
-//         let product = await Product.findOneAndUpdate(
-//             { _id: id },
-//             updateInfo,
-//             { new: true }
-//         );
-//         if (!product){
-//             throw new Error(constants.productMessage.PRODUCT_NOT_FOUND)
-//         }
-//         return formatMongoData(product);
-//     } catch (error) {
-//         console.log('Something went wrong: Service: getProductById', error)
-//         throw new Error(error)
-//     }
-   
-// }
-
-// module.exports.deleteProduct = async({ id }) => {
-//     try {
-//         checkObjectId(id);
-//         let product = await Product.findByIdAndDelete(id);
-//         if (!product){
-//             throw new Error(constants.productMessage.PRODUCT_NOT_FOUND)
-//         }
-//         return formatMongoData(product);
-//     } catch (error) {
-//         console.log('Something went wrong: Service: getProductById', error)
-//         throw new Error(error)
-//     }
-   
-// }
+}
