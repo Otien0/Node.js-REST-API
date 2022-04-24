@@ -25,7 +25,7 @@ module.exports.getProducts = async (req, res,) => {
 
     try {
         // console.log('===', req.body)
-        const serviceResponse = await productService.getProducts(req.body);
+        const serviceResponse = await productService.getProducts(req.query);
         response.statusCode = 200;
         response.message = constants.productMessage.PRODUCT_FETCHED;
         response.body = serviceResponse;
