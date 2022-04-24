@@ -159,7 +159,8 @@ NODE-API:
 
 
 	c) Securing the Products API Using JWT:
-		With this, only logged in users can access the products API End-Points.
+		With this, only logged-in users can access the products API End-Points.
+		Configure the products token validation and add it on all the Product-ROTES, this enhances security.
 
 
 
