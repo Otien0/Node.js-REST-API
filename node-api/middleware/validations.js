@@ -153,7 +153,11 @@ module.exports.validateToken = (req, res, next) => {
         if(!req.headers.authorization) {
             throw new Error(constants.requestValidationMessage.TOKEN_MISSING)
         }
-        const token = req.headers.authorization.split('Bearer')[1].trim()
+
+        // const arr = [];
+        // const token = req.headers.authorization.split('Bearer')(typeof arr?.[1] === 'string' ? arr[1].trim() : '')
+        const token = req.headers.authorization.split('Bearer')[1].trim();
+
         const decoded = jwt.verify(token, process.env.SECRET_KEY || 'my-secret-key')
         console.log('decoded', decoded)
         return next();
