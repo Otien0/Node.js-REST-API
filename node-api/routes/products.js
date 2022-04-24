@@ -2,13 +2,13 @@ const express               = require("express"),
       router                = express.Router(),
     //   Product               = require("../models/productModel"),
       products              = require('../controllers/productsController'),
-      { validateProduct }   = require('../middleware/validations'),
-      product               = require('../apiSchema/JoiSchemas');
+      { validateProduct, validateQueryParams }   = require('../middleware/validations'),
+      Schema               = require('../apiSchema/JoiSchemas');
 
 
 
-router.post('/', validateProduct(product.ProductSchema), products.createProduct);
+router.post('/', validateProduct(Schema.ProductSchema), products.createProduct);
 
-router.get('/', products.getProducts)
+router.get('/', validateQueryParams(Schema.getProducts), products.getProducts);
 
 module.exports = router;
