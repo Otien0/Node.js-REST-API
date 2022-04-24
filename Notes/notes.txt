@@ -93,6 +93,7 @@ NODE-API:
         	Test the GET method with POSTMAN.
             
 		Adding Pagination on the GET ROUTE:
-		Create the Pagination MODEL-Schema
+		Create the Pagination JOI-Schema and implement it to the validations middleware.
+		Modify the GET service method to fit your pagination JOI-Schema.
 
     
