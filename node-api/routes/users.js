@@ -8,12 +8,4 @@ const express               = require("express"),
 router.post('/signup', validateUser(Schema.signup), users.signup);
 router.post('/login', validateUserLogin(Schema.loginSchema), users.login);
 
-
-// router.get('/:id');
-// router.put('/:id');
-
-// router.get('/');
-
-// router.delete('/:id');
-
 module.exports = router;
