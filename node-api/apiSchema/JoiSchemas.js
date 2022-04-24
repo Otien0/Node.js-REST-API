@@ -13,7 +13,7 @@ module.exports.ProductSchema = Joi.object().keys({
 //         brand: Joi.string().required()
 //     }).required()
 // })
-module.exports.getProducts = Joi.object().keys({
+module.exports.getProductsPage = Joi.object().keys({
     skip: Joi.string(),
     limit: Joi.string()
 })
