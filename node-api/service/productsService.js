@@ -14,9 +14,9 @@ module.exports.createProduct = async(serviceData) => {
    
 }
 
-module.exports.getProducts = async(serviceData) => {
+module.exports.getProducts = async(skip = 0, limit = 10) => {
     try {
-        let products = await Product.find({})
+        let products = await Product.find({}).skip(parseInt(skip)).limit(parseInt(limit))
         return formatMongoData(products)
     } catch (error) {
         console.log('Something went wrong: Service: getProducts', error)
