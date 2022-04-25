@@ -46,9 +46,10 @@ NODE.JS REST APIs:
 
 =============================================>>>> 
 		Here I'm creating two REST APIs;
-				1) PRODUCTS API
-				2) USER-SIGNUP API
-				3) API-DOCUMENTATION(SWAGGER)
+				1) PRODUCTS API.
+				2) USER-SIGNUP API.
+				3) API-DOCUMENTATION(SWAGGER).
+				4) DEPLOYMENT.
 =============================================>>>>
 
 
@@ -181,6 +182,12 @@ NODE-API:
 			npm install swagger-ui-express
 			npm install swagger-ui-express yamljs
 		Then add the documentation on swagger.json/yaml file.
+
+
+4) DEPLOYMENT:
+	Deploying to Heroku.
+		https://dashboard.heroku.com/apps/node-api-v1/deploy/heroku-git
+
 
 
 	
