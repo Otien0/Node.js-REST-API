@@ -1,7 +1,7 @@
 const User              = require('../models/userModel'),
       {formatMongoData} = require('../helper/dbHelper'),
       constants         = require('../constants'),
-      bcrypt            = require('bcrypt'),
+      bcrypt            = require('bcryptjs'),
       jwt               = require('jsonwebtoken');
 
 module.exports.signup = async({email, password}) => {
