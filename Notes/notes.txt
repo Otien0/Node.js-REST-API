@@ -189,7 +189,8 @@ NODE-API:
 		https://dashboard.heroku.com/apps/node-api-v1/deploy/heroku-git
 
 
-
+	Link to Deployed API:
+			https://node-api-v1.herokuapp.com/
 	
 
 
