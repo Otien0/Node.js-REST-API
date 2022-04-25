@@ -9,7 +9,9 @@ const express               = require("express"),
       YAML                  = require('yamljs'),
       swaggerDocument       = YAML.load('./swagger.yaml');
 
-const dbUrl                 = process.env.MONGO_URL || 'mongodb://localhost:27017/node-REST-API';
+
+// const dbUrl                 = process.env.MONGO_URL || 'mongodb://localhost:27017/node-REST-API';
+const dbUrl                 = process.env.DB_URL;
 
 dotEnv.config();
 
@@ -40,6 +42,9 @@ app.use('/api/v1/user', require('./routes/users'));
 // API DOCUMENTATION
 if (process.env.NODE_ENV != 'production') {
     app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+}
+else {
+    app.use('/api-doc', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 }
 
 app.get('/', (req, res, next) => {
