@@ -1,7 +1,7 @@
 const express               = require("express"),
       router                = express.Router(),
       users                 = require('../controllers/usersController'),
-      { validateUser, validateUserLogin }      = require('../middleware/validations'),
+      { validateUser, validateUserLogin } = require('../middleware/validations'),
       Schema                = require('../apiSchema/JoiSchemas');
 
 
