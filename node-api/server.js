@@ -3,7 +3,7 @@ const express = require("express"),
   bodyParser = require("body-parser"),
   dotEnv = require("dotenv"),
   path = require("path"),
-  connectDB = require("../db"),
+  connectDB = require("./database/db"),
   cors = require("cors"),
   cookieParser = require("cookie-parser"),
   swaggerUi = require("swagger-ui-express"),
@@ -50,7 +50,7 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`node-REST-API server running on port ${PORT}`);
 });
