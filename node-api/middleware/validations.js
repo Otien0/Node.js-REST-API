@@ -160,6 +160,7 @@ module.exports.validateToken = (req, res, next) => {
     // const arr = [];
     // const token = req.headers.authorization.split('Bearer')(typeof arr?.[1] === 'string' ? arr[1].trim() : '')
     const token = req.headers.authorization.split("Bearer")[1].trim();
+    // const token = req.headers.authorization.split(" ")[1];
 
     const decoded = jwt.verify(
       token,
