@@ -9,10 +9,10 @@ info:
   license:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
-host: localhost:3000
+host: products-api-v2.herokuapp.com
 basePath: /api/v2
 schemes:
-- http
+- https
 paths:
   /user/login:
     post:
