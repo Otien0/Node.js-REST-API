@@ -53,7 +53,7 @@ NODE.JS REST APIs:
 =============================================>>>>
 
 
-1) PRODUCTS API::
+1) PRODUCTS API::  >> products-api-v2.herokuapp.com
 
 NODE-API:
     mkdir node-api
@@ -186,11 +186,11 @@ NODE-API:
 
 4) DEPLOYMENT:
 	Deploying to Heroku.
-		https://dashboard.heroku.com/apps/node-api-v1/deploy/heroku-git
+		https://dashboard.heroku.com/apps/products-api-v2/deploy/heroku-git
 
 
 	Link to Deployed API:
-			https://node-api-v1.herokuapp.com/
+			products-api-v2.herokuapp.com
 	
 
 
