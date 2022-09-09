@@ -8,7 +8,7 @@ module.exports.signup = async ({ email, password }) => {
   try {
     const user = await User.findOne({ email });
     if (user) {
-      throw new Error(constants.userMessage.DUPLICATE_EMAIL);
+      return new Error(constants.userMessage.DUPLICATE_EMAIL);
     }
     password = await bcrypt.hash(password, 12);
 
@@ -18,7 +18,7 @@ module.exports.signup = async ({ email, password }) => {
     return formatMongoData(result);
   } catch (error) {
     console.log("Something went wrong: Service: signup", error);
-    throw new Error(error);
+    return new Error(error);
   }
 };
 
@@ -26,12 +26,12 @@ module.exports.login = async ({ email, password }) => {
   try {
     const user = await User.findOne({ email });
     if (!user) {
-      throw new Error(constants.userMessage.USER_NOT_FOUND);
+      return new Error(constants.userMessage.USER_NOT_FOUND);
     }
     //Check & Compare Existing Password
     const isValid = await bcrypt.compare(password, user.password);
     if (!isValid) {
-      throw new Error(constants.userMessage.INVALID_PASSWORD);
+      return new Error(constants.userMessage.INVALID_PASSWORD);
     }
     //Using JWT
     const token = jwt.sign(
@@ -39,10 +39,10 @@ module.exports.login = async ({ email, password }) => {
       process.env.SECRET_KEY || "my-secret-key",
       { expiresIn: "1d" }
     );
-
     return { token };
+
   } catch (error) {
     console.log("Something went wrong: Service: login", error);
-    throw new Error(error);
+    return new Error(error);
   }
 };
