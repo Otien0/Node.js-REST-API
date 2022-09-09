@@ -34,21 +34,25 @@ if (process.env.NODE_ENV != "production") {
 }
 
 app.get("/", (req, res, next) => {
-  res.send("Welcome to node-REST-API version 2.0");
+  // res.send("Welcome to node-REST-API version 2.0");
+  res.send(
+    "Welcome to products-REST-API version 2.0.  <h1>Go to: /api-doc  for Swagger API Documentation.</h1>"
+  );
 });
 
 // CONFIGURE WITH FRONTEND ON PRODUCTION
-if (process.env.NODE_ENV === "production") {
-  app.use("/", express.static("frontend/build"));
+// if (process.env.NODE_ENV === "production") {
+//   app.use("/", express.static("frontend/build"));
 
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client/build/index.html"));
-  });
-} else {
-  app.get("/", (req, res) => {
-    res.send("Welcome to node-REST-API version 2.0");
-  });
-}
+//   app.get("*", (req, res) => {
+//     res.sendFile(path.resolve(__dirname, "client/build/index.html"));
+//   });
+// } else {
+//   app.get("/", (req, res) => {
+//     res.send("Welcome to node-REST-API version 2.0");
+//     res.send("<h1>Go to: /api-docs/  for Swagger API Documentation.</h1>");
+//   });
+// }
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
