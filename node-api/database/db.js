@@ -1,21 +1,22 @@
 const mongoose = require("mongoose");
-const dotEnv   = require('dotenv');
+const dotenv = require('dotenv');
+require('colors');
 
-dotEnv.config();
+dotenv.config();
 
 const dbUrl = process.env.DB_URL;
 
-const connectDB = () => {
-    mongoose.connect(dbUrl, { useUnifiedTopology: true , useNewUrlParser: true})
-    const connection = mongoose.connection
-
-    connection.on('connected' , () => {
-        console.log('MongoDB Database Connection Successfull')
-    })
-
-    connection.on('error' , ()=>{
-        console.log('Mongo DB Connection Error')
-    })
+const connectDB = async () => {
+    try {
+        await mongoose.connect(dbUrl, {
+            useUnifiedTopology: true,
+            useNewUrlParser: true
+        });
+        console.log('MongoDB Database Connection Successful'.green);
+    } catch (error) {
+        console.error('MongoDB Connection Error'.red, error);
+        process.exit(1); // Exit process with failure
+    }
 }
 
-module.exports = connectDB
+module.exports = connectDB;
