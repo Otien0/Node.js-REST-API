@@ -36,7 +36,7 @@ if (process.env.NODE_ENV != "production") {
 app.get("/", (req, res, next) => {
   // res.send("Welcome to node-REST-API version 2.0");
   res.send(
-    "Welcome to products-REST-API version 2.0.  <h1>Go to: /api-doc  for Swagger API Documentation.</h1>"
+    "Welcome to products-REST-API version 2.0.  <h1>Go to: /api-doc || /api-docs  for Swagger API Documentation.</h1>"
   );
 });
 
