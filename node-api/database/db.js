@@ -4,6 +4,8 @@ require('colors');
 
 dotenv.config();
 
+mongoose.set('strictQuery', true);
+
 const dbUrl = process.env.DB_URL;
 
 const connectDB = async () => {
